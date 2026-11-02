@@ -1,0 +1,5 @@
+services:
+  frontend:
+    image: nginx:latest
+    ports:
+      - 8181:80
