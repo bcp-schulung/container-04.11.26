@@ -1,5 +1,5 @@
 services:
   frontend:
-    image: nginx:latest
+    image: container-harbor.container.it-scholar.com/dataport/ben-coeppicus:v3
     ports:
       - 8181:80
