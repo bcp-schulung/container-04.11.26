@@ -3,3 +3,26 @@ services:
     image: container-harbor.container.it-scholar.com/dataport/ben-coeppicus:v3
     ports:
       - 8181:80
+    networks:
+      - edge
+    volumes:
+      - ./frontend.html:/var/www/html/index.html:ro
+  backend:
+    image: container-harbor.container.it-scholar.com/dataport/ben-coeppicus:v3
+    networks:
+      - edge
+      - data
+    volumes:
+      - ./backend.html:/var/www/html/index.html:ro
+  database:
+    image: container-harbor.container.it-scholar.com/dataport/ben-coeppicus:v3
+    networks:
+      - data
+    volumes:
+      - ./database.html:/var/www/html/index.html:ro
+
+networks:
+  edge:
+    driver: bridge
+  data:
+    driver: bridge
