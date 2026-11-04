@@ -1,0 +1,21 @@
+image:
+  repository: databport-harbor.databport.it-scholar.com/seminar/ben-coeppicus
+  tag: v2
+
+replicaCount: 1
+
+components:
+  - name: frontend
+    html: |
+      <h1>Frontend</h1>
+  - name: backend
+    html: |
+      <h1>Backend</h1>
+  - name: database
+    html: |
+      <h1>Database</h1>
+  
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 80
